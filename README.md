@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+_Snowballs are blowing, Christmas elves are dancing..._ Uuugh - I totally hate winter, but it's also coming up to **Christmas**! That tradtional time of the year where you use your skills to craft apps your buddies never asked for. *Come on, it can't just be me!*
+
+Anyway I had a leg up this year. My dad was hospitalized for a few months, so I went through the house, giving it a thorough clean and inspected every nook and cranny.
+
+I had an *awesome* break from this 'cope by cleaning' psychosis, where I discovered photo albums full of my family's past vacations. I had meant to send them to my dad then, but *I-don't-know-what-happened*.  
+
+Fortunately, I can use them now to create a web app photo gallery.
+
+And not just any one, but a performant photo gallery, while using **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
 
 ## Getting Started
 
@@ -15,10 +23,6 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
