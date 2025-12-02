@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sketch.className} antialiased`}
+        className={`${sketch.className} text-stone-200 antialiased`}
       >
         {children}
       </body>
