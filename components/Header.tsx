@@ -4,7 +4,7 @@ import Button from "./Button";
 const Header = () => {
   return (
     <header className="flex items-center justify-between  p-12 w-full">
-      <h1 className="font-bold text-6xl leading-tight">Secret Project 🤫</h1>
+      <h1 className="font-bold text-4xl leading-tight">New</h1>
       <div className="flex justify-center gap-6">
         <Link href="/grid" className="mt-2">
           <Button tooltip="Grid view">
