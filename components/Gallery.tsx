@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Londrina_Sketch } from "next/font/google";
+import { shufflePhotos } from "@/lib/photoUtils";
 import Button from "./Button";
 
 const sketch = Londrina_Sketch({
@@ -16,7 +17,8 @@ const sketch = Londrina_Sketch({
 });
 
 export default async function Gallery() {
-  const photos = await getPhotos();
+  const images = await getPhotos();
+  const photos = shufflePhotos(images);
   // TODO: initiate new badge when localStorage number is higher than old photos.length
   // console.log(photos.length);
 
