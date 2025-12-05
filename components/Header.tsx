@@ -1,10 +1,16 @@
 import Link from "next/link";
+import { Londrina_Sketch } from "next/font/google";
 import Button from "./Button";
+
+const sketch = Londrina_Sketch({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Header = () => {
   return (
     <header className="flex items-center justify-between  p-12 w-full">
-      <h1 className="font-bold text-4xl leading-tight">New</h1>
+      <h1 className={`font-extrabold text-4xl leading-tight ${sketch.className}`}>New</h1>
       <div className="flex justify-center gap-6">
         <Link href="/grid" className="mt-2">
           <Button tooltip="Grid view">

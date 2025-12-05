@@ -14,17 +14,18 @@ const notoSans = Noto_Sans({
 type ButtonProps = {
     tooltip: React.ReactNode
     children: React.ReactNode
+    className?: string
 }
 
-const Button = ({ tooltip, children }: ButtonProps) => {
+const Button = ({ tooltip, children, className }: ButtonProps) => {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <button className="cursor-pointer">
+        <button className={`cursor-pointer`}>
          {children}
         </button>
       </TooltipTrigger>
-      <TooltipContent className={`${notoSans.className} font-bold text-lg`}>{tooltip}</TooltipContent>
+      <TooltipContent className={`${notoSans.className} font-bold text-lg ${className}`}>{tooltip}</TooltipContent>
     </Tooltip>
   );
 };

@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Londrina_Sketch, Noto_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const sketch = Londrina_Sketch({
-  weight: "400",
-  subsets: ["latin"],
-});
-
+// TODO: I think I should change this all to NotoSans, instead of sketch, like I have on body.
 const notoSans = Noto_Sans({
   weight: "400",
   subsets: ["latin"],
@@ -25,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sketch.className} text-stone-200 antialiased`}
+        className={`${notoSans.className} text-stone-950 antialiased bg-stone-200 dark:bg-stone-900 dark:text-stone-200`}
       >
+        <Header />
         {children}
       </body>
     </html>
