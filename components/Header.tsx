@@ -18,25 +18,27 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between  p-12 w-full">
       <h1
-        className={`font-extrabold text-4xl leading-tight ${sketch.className} bg-blue-500 rounded-full shadow-2xl shadow-amber-300/75 ${hasNewPhotos && "animate-pulse px-6 py-2"}`}
+        className={`font-extrabold text-4xl leading-tight ${
+          sketch.className
+        } bg-blue-500 rounded-full shadow-2xl shadow-amber-300/75 ${
+          hasNewPhotos && "animate-pulse px-6 py-2"
+        }`}
       >
         {hasNewPhotos ? "New" : ""}
       </h1>
       <div className="flex justify-center gap-6">
-        <Link href="/grid" className="mt-2">
+        <Link href="/grid" className="mt-1">
           <Button tooltip="Grid view">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              width="1em"
+              height="1em"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
               className="size-6"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125Z"
+                fill="currentColor"
+                d="M5 3h13a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v3h5V4zM3 19a2 2 0 0 0 2 2h3v-5H3zm5-9H3v5h5zm10 11a2 2 0 0 0 2-2v-3h-5v5zm2-11h-5v5h5zm0-4a2 2 0 0 0-2-2h-3v5h5zM9 4v5h5V4zm0 17h5v-5H9zm5-11H9v5h5z"
               />
             </svg>
           </Button>
@@ -49,7 +51,7 @@ const Header = () => {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6"
+              className="size-6"
             >
               <path
                 stroke-linecap="round"
