@@ -26,12 +26,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-    // useEffect(() => {
-    //     const storedTheme = localStorage.getItem("theme") as Theme | null;
-    //     if (storedTheme) setTheme(storedTheme);
-
-    // }, []);
-
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme: () => setTheme(theme === "light" ? "dark" : "light"), setTheme }}>
             {children}

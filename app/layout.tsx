@@ -3,6 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/theme-context";
 import { NewPhotosProvider } from "@/context/new-photos-context";
+import { ViewProvider } from "@/context/view-context";
 import Header from "@/components/Header";
 
 const notoSans = Noto_Sans({
@@ -27,10 +28,12 @@ export default function RootLayout({
         className={`${notoSans.className} text-stone-950 antialiased bg-stone-200 dark:bg-stone-900 dark:text-stone-200`}
       >
         <ThemeProvider>
-          <NewPhotosProvider>
-            <Header />
-            {children}
-          </NewPhotosProvider>
+          <ViewProvider>
+            <NewPhotosProvider>
+              <Header />
+              {children}
+            </NewPhotosProvider>
+          </ViewProvider>
         </ThemeProvider>
       </body>
     </html>

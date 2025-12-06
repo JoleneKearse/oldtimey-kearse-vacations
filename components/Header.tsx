@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/theme-context";
+import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
 import Link from "next/link";
 import { Londrina_Sketch } from "next/font/google";
@@ -13,6 +14,7 @@ const sketch = Londrina_Sketch({
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { view, toggleView } = useView();
   const { hasNewPhotos } = useNewPhotos();
 
   return (
@@ -27,21 +29,38 @@ const Header = () => {
         {hasNewPhotos ? "New" : ""}
       </h1>
       <div className="flex justify-center gap-6">
-        <Link href="/grid" className="mt-1">
-          <Button tooltip="Grid view">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-              className="size-6"
-            >
-              <path
-                fill="currentColor"
-                d="M5 3h13a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v3h5V4zM3 19a2 2 0 0 0 2 2h3v-5H3zm5-9H3v5h5zm10 11a2 2 0 0 0 2-2v-3h-5v5zm2-11h-5v5h5zm0-4a2 2 0 0 0-2-2h-3v5h5zM9 4v5h5V4zm0 17h5v-5H9zm5-11H9v5h5z"
-              />
-            </svg>
-          </Button>
+        <Link href={view === "gallery" ? "/grid" : "/"} className="mt-1">
+          {view === "gallery" ? (
+            <Button tooltip="Grid view" onClick={toggleView}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+                className="size-6"
+              >
+                <path
+                  fill="currentColor"
+                  d="M5 3h13a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v3h5V4zM3 19a2 2 0 0 0 2 2h3v-5H3zm5-9H3v5h5zm10 11a2 2 0 0 0 2-2v-3h-5v5zm2-11h-5v5h5zm0-4a2 2 0 0 0-2-2h-3v5h5zM9 4v5h5V4zm0 17h5v-5H9zm5-11H9v5h5z"
+                />
+              </svg>
+            </Button>
+          ) : (
+            <Button tooltip="Gallery view" onClick={toggleView}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+                className="size-6"
+              >
+                <path
+                  fill="currentColor"
+                  d="M5 3h13a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v11.59l4.29-4.3l2.5 2.5l5-5L20 16V6a2 2 0 0 0-2-2zm4.79 13.21l-2.5-2.5L3 19a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-1.59l-5.21-5.2zM7.5 6A2.5 2.5 0 0 1 10 8.5A2.5 2.5 0 0 1 7.5 11A2.5 2.5 0 0 1 5 8.5A2.5 2.5 0 0 1 7.5 6m0 1A1.5 1.5 0 0 0 6 8.5A1.5 1.5 0 0 0 7.5 10A1.5 1.5 0 0 0 9 8.5A1.5 1.5 0 0 0 7.5 7"
+                />
+              </svg>
+            </Button>
+          )}
         </Link>
         {theme === "light" ? (
           <Button tooltip="Dark mode" onClick={toggleTheme}>
