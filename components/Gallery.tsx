@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useNewPhotos } from "@/context/new-photos-context";
 import { setStoredPhotoCount, getStoredPhotoCount } from "@/lib/photoUtils";
+import { downloadPhoto } from "@/lib/photoUtils";
 import { Londrina_Sketch } from "next/font/google";
 import Image from "next/image";
 import {
@@ -45,12 +46,15 @@ export default function Gallery({ photos }: GalleryProps) {
   return (
     <Carousel className="w-1/2 h-1/2 mx-auto" opts={{ loop: true }}>
       <CarouselContent>
-        {photos.map((photo: object, index: number) => (
+        {photos.map((photo, index) => (
           <CarouselItem
             key={index}
             className="flex justify-center items-center max-w-[840px] max-h-[840px] overflow-hidden relative px-22"
           >
-            <Button tooltip="Download" className="absolute -top-112 left-144">
+            <Button tooltip="Download" className="absolute -top-112 left-144" onClick={() => {
+              const downloadUrl = downloadPhoto(photo.url);
+              window.open(downloadUrl, "_blank");
+            }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

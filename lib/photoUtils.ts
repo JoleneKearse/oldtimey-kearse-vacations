@@ -20,3 +20,7 @@ export function setStoredPhotoCount(count: number): void {
   }
   localStorage.setItem("photoCount", count);
 }
+
+export function downloadPhoto(url: string): string {
+  return url.replace("upload/", "upload/fl_attachment,f_auto,q_auto/");
+}
