@@ -20,5 +20,3 @@ export function setStoredPhotoCount(count: number): void {
   }
   localStorage.setItem("photoCount", count);
 }
-
-export function generateNewBadge(photos: Array<any>) {}

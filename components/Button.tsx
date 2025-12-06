@@ -15,13 +15,14 @@ type ButtonProps = {
     tooltip: React.ReactNode
     children: React.ReactNode
     className?: string
+    onClick?: () => void
 }
 
-const Button = ({ tooltip, children, className }: ButtonProps) => {
+const Button = ({ tooltip, children, className, onClick }: ButtonProps) => {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <button className={`cursor-pointer`}>
+        <button className={`cursor-pointer`} onClick={onClick}>
          {children}
         </button>
       </TooltipTrigger>

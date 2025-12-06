@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/context/theme-context";
 import { NewPhotosProvider } from "@/context/new-photos-context";
 import Header from "@/components/Header";
 
@@ -25,10 +26,12 @@ export default function RootLayout({
       <body
         className={`${notoSans.className} text-stone-950 antialiased bg-stone-200 dark:bg-stone-900 dark:text-stone-200`}
       >
-        <NewPhotosProvider>
-          <Header />
-          {children}
-        </NewPhotosProvider>
+        <ThemeProvider>
+          <NewPhotosProvider>
+            <Header />
+            {children}
+          </NewPhotosProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
