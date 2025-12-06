@@ -34,7 +34,7 @@ export default function Gallery({ photos }: GalleryProps) {
   useEffect(() => {
     const previousCount = getStoredPhotoCount();
     const currentCount = photos.length;
-    
+
     if (currentCount > previousCount) {
       setHasNewPhotos(true);
     }
@@ -43,7 +43,7 @@ export default function Gallery({ photos }: GalleryProps) {
   }, [photos.length, setHasNewPhotos]);
 
   return (
-    <Carousel className="w-1/2 h-1/2 mx-auto outline" opts={{ loop: true }}>
+    <Carousel className="w-1/2 h-1/2 mx-auto" opts={{ loop: true }}>
       <CarouselContent>
         {photos.map((photo: object, index: number) => (
           <CarouselItem
