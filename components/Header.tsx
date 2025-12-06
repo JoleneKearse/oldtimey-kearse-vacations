@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between  p-12 w-full">
       <h1
-        className={`font-extrabold text-4xl leading-tight ${sketch.className}`}
+        className={`font-extrabold text-4xl leading-tight ${sketch.className} bg-blue-500 rounded-full shadow-2xl shadow-amber-300/75 ${hasNewPhotos && "animate-pulse px-6 py-2"}`}
       >
         {hasNewPhotos ? "New" : ""}
       </h1>
