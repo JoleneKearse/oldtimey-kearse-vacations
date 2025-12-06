@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { getPhotos } from "@/lib/cloudinary";
+import { shufflePhotos } from "@/lib/photoUtils";
 
 const Grid = async () => {
-    const photos = await getPhotos();
+    const images = await getPhotos();
+    const photos = shufflePhotos(images);
 
     return ( 
         <div className="grid grid-cols-4 row-auto justify-center items-center gap-4 p-4">
