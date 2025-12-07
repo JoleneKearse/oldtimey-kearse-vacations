@@ -1,4 +1,6 @@
-export function shufflePhotos(photos: Array<any>) {
+import { Photo } from "@/types/photo";
+
+export function shufflePhotos(photos: Photo[]): Photo[] {
   for (let i = photos.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [photos[i], photos[j]] = [photos[j], photos[i]];
@@ -18,7 +20,7 @@ export function setStoredPhotoCount(count: number): void {
   if (typeof window === "undefined") {
     return;
   }
-  localStorage.setItem("photoCount", count);
+  localStorage.setItem("photoCount", String(count));
 }
 
 export function downloadPhoto(url: string): string {
