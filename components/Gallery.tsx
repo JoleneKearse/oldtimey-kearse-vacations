@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useNewPhotos } from "@/context/new-photos-context";
+import type { Photo } from "@/types/photo";
 import { setStoredPhotoCount, getStoredPhotoCount } from "@/lib/photoUtils";
 import { downloadPhoto } from "@/lib/photoUtils";
 import { Londrina_Sketch } from "next/font/google";
@@ -21,12 +22,7 @@ const sketch = Londrina_Sketch({
 });
 
 type GalleryProps = {
-  photos: Array<{
-    url: string;
-    publicId: string;
-    width: number;
-    height: number;
-  }>;
+  photos: Photo[];
 };
 
 export default function Gallery({ photos }: GalleryProps) {

@@ -1,12 +1,14 @@
-_Snowballs are blowing, Christmas elves are dancing..._ Uuugh - I totally hate winter, but it's also coming up to **Christmas**! That tradtional time of the year where you use your skills to craft apps your buddies never asked for. *Come on, it can't just be me!*
+_Snowballs are blowing, Christmas elves are dancing..._ Uuugh - I totally hate winter, but it's also coming up to **Christmas**! That tradtional time of the year where you use your skills to craft apps your buddies never asked for. _Come on, it can't just be me!_
 
 Anyway I had a leg up this year. My dad was hospitalized for a few months, so I went through the house, giving it a thorough clean and inspected every nook and cranny.
 
-I had an *awesome* break from this 'cope by cleaning' psychosis, where I discovered photo albums full of my family's past vacations. I had meant to send them to my dad then, but *I-don't-know-what-happened*.  
+I had an _awesome_ break from this 'cope by cleaning' psychosis, where I discovered photo albums full of my family's past vacations. I had meant to send them to my dad then, but _I-don't-know-what-happened_. :woman_shrugging:
 
-Fortunately, I can use them now to create a web app photo gallery.
+Fortunately, I can use them now to create a web app photo gallery, while learning too.
 
 And not just any one, but a performant photo gallery, while using **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
+
+## Overview
 
 ## Getting Started
 

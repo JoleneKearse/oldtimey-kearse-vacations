@@ -1,4 +1,5 @@
 import Image from "next/image";
+// import type { Photo } from "@/types/photo";
 import { getPhotos } from "@/lib/cloudinary";
 import { shufflePhotos } from "@/lib/photoUtils";
 

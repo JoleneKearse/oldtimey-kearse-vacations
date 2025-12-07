@@ -26,6 +26,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
+    // Load theme from localStorage on mount
+
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme: () => setTheme(theme === "light" ? "dark" : "light"), setTheme }}>
             {children}

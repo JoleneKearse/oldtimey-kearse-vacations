@@ -1,4 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
+import type { Photo } from "@/types/photo";
+import type { CloudinaryResource } from "@/types/cloudinaryResource";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -6,16 +8,18 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function getPhotos() {
+export async function getPhotos(): Promise<Photo[]> {
   const result = await cloudinary.search
     .expression("folder:family-photos")
     .execute();
 
-  return result.resources.map((file: any) => ({
-    publicId: file.public_id,
-    url: file.secure_url,
-    width: file.width,
-    height: file.height,
-    format: file.format,
-  }));
+  return result.resources.map(
+    (file: CloudinaryResource): Photo => ({
+      publicId: file.public_id,
+      url: file.secure_url,
+      width: file.width,
+      height: file.height,
+      format: file.format,
+    })
+  );
 }
