@@ -40,17 +40,24 @@ export default function Gallery({ photos }: GalleryProps) {
   }, [photos.length, setHasNewPhotos]);
 
   return (
-    <Carousel className="w-1/2 h-1/2 mx-auto" opts={{ loop: true }}>
+    <Carousel
+      className="md:w-1/2 md:h-1/2 mx-auto outline"
+      opts={{ loop: true }}
+    >
       <CarouselContent>
         {photos.map((photo, index) => (
           <CarouselItem
             key={index}
             className="flex justify-center items-center max-w-[840px] max-h-[840px] overflow-hidden relative px-22"
           >
-            <Button tooltip="Download" className="absolute -top-112 left-144" onClick={() => {
-              const downloadUrl = downloadPhoto(photo.url);
-              window.open(downloadUrl, "_blank");
-            }}>
+            <Button
+              tooltip="Download"
+              className="absolute -top-112 left-144"
+              onClick={() => {
+                const downloadUrl = downloadPhoto(photo.url);
+                window.open(downloadUrl, "_blank");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
