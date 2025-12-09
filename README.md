@@ -26,17 +26,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Challenges
 
-To learn more about Next.js, take a look at the following resources:
+I built my trusty `lib/photoUtils/shufflePhotos` function, which worked fantastically in _development_, but had this strange quirk where it always started with the same photo in _production_!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After plenty of _Huh_?!?s, I learned a new thing about **Next JS**. My Gallery and Grid components were served **client-side**. This meant I was only calling `getPhotos` and `shufflePhotos` once per build. So, it was getting _baked into_ the HTML. 🤦‍♀️

@@ -1,6 +1,5 @@
 "use client";
 
-import { getInitialTheme } from "@/lib/utils";
 import {
   createContext,
   useEffect,
@@ -20,7 +19,7 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const html = document.documentElement;
@@ -34,12 +33,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme]);
 
   // Load theme from localStorage on mount
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as Theme | null;
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-  }, []);
+//   useEffect(() => {
+//     const storedTheme = localStorage.getItem("theme") as Theme | null;
+//     if (storedTheme) {
+//       setTheme(storedTheme);
+//     }
+//   }, []);
 
   return (
     <ThemeContext.Provider

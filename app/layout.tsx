@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/theme-context";
 import { NewPhotosProvider } from "@/context/new-photos-context";
 import { ViewProvider } from "@/context/view-context";
 import Header from "@/components/Header";
+import { Analytics } from "@vercel/analytics/next";
 
 const notoSans = Noto_Sans({
   weight: "400",
@@ -32,7 +33,7 @@ export default function RootLayout({
             <NewPhotosProvider>
               <Header />
               <main className="flex grow">{children}</main>
-              {/* {children} */}
+              <Analytics />
             </NewPhotosProvider>
           </ViewProvider>
         </ThemeProvider>
