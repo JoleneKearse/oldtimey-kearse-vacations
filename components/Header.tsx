@@ -18,7 +18,7 @@ const Header = () => {
   const { hasNewPhotos } = useNewPhotos();
 
   return (
-    <header className="flex items-center justify-between  p-12 w-full">
+    <header className="flex items-center justify-between  p-8 w-full">
       <h1
         className={`font-extrabold text-4xl leading-tight ${
           sketch.className

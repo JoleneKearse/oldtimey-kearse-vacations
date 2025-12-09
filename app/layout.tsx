@@ -25,13 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.className} text-stone-950 antialiased bg-stone-200 dark:bg-stone-900 dark:text-stone-200`}
+        className={`${notoSans.className} min-h-screen flex flex-col text-stone-950 antialiased bg-stone-200 dark:bg-stone-900 dark:text-stone-200`}
       >
         <ThemeProvider>
           <ViewProvider>
             <NewPhotosProvider>
               <Header />
-              {children}
+              <main className="flex grow">{children}</main>
+              {/* {children} */}
             </NewPhotosProvider>
           </ViewProvider>
         </ThemeProvider>

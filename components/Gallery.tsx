@@ -41,14 +41,14 @@ export default function Gallery({ photos }: GalleryProps) {
 
   return (
     <Carousel
-      className="w-[400px] md:w-1/2 md:h-1/2 mx-auto outline"
+      className="w-[400px] md:w-1/2 md:h-1/2 mx-auto my-auto outline"
       opts={{ loop: true }}
     >
       <CarouselContent>
         {photos.map((photo, index) => (
           <CarouselItem
             key={index}
-            className="flex justify-center items-center max-w-[840px] max-h-[840px] overflow-hidden relative px-22"
+            className="max-w-[840px] max-h-[840px] overflow-hidden relative px-22"
           >
             <Button
               tooltip="Download"
