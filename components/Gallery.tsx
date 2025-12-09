@@ -41,7 +41,7 @@ export default function Gallery({ photos }: GalleryProps) {
 
   return (
     <Carousel
-      className="w-[400px] flex md:w-1/2 md:h-1/2 mx-auto my-auto outline"
+      className="flex w-[400px] md:w-[700px] lg:w-1/2 lg:h-1/2 mx-auto my-auto"
       opts={{ loop: true }}
     >
       <CarouselContent>
