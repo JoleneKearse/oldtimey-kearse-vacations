@@ -24,7 +24,7 @@ Home Page
 Grid Route
 ![grid view](image-1.png)
 
-When users (my dad and me) come to the home page, they are greeted with an accessible carousel.  They can download each image in the best format for their device, and switch the view and light/dark mode.
+When users (my dad and me) come to the home page, they are greeted with an accessible carousel. They can download each image in the best format for their device, and switch the view and light/dark mode.
 
 For fun, the gallery line-up is randomized each time.
 
@@ -39,13 +39,7 @@ And the [live site](https://oldtimey-kearse-vacations.vercel.app/)
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
