@@ -10,9 +10,9 @@ And not just any one, but a performant photo gallery, while using **[Next.js](ht
 
 ## Tech Stack 🧰
 
-After weighing the pros and cons, I decided to use NextJS to optimize images. 
+After weighing the pros and cons, I decided to use NextJS to optimize images.
 
-Tailwind is used for ease of styling and Shadcn for the carousel and tootips.  
+Tailwind is used for ease of styling and Shadcn for the carousel and tootips.
 
 Rather than setting up a database I decided to take advantage of Cloudinary.
 
@@ -54,9 +54,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Making Cloudinary images downloadable
 
-**Cloudinary** is simply easy to use, but that's a two-edged sword. Since it can do so much, it was initially challenging to find the *exact* functionality I wanted. 
+**Cloudinary** is simply easy to use, but that's a two-edged sword. Since it can do so much, it was initially challenging to find the _exact_ functionality I wanted.
 
-I wanted a button to download images and fortunately it was as easy as modifying the url with `upload/fl_attachment,f_auto,q_auto/` rather than just `upload/i8`. I tossed that in a utility function & slapped it into an `onClick`.  Bang boom done!
+I wanted a button to download images and fortunately it was as easy as modifying the url with `upload/fl_attachment,f_auto,q_auto/` rather than just `upload/i8`. I tossed that in a utility function & slapped it into an `onClick`. Bang boom done!
 
 ### Getting my photos to shuffle ASAP
 
@@ -73,3 +73,15 @@ export const dynamic = "force-dynamic";
 This disables static optimization, making my shuffle run on every request. 🙌
 
 While I was tempted to apply this to my `/grid` route, I abstained to make it easier to locate photos for download.
+
+### Detecting a Hydration Error
+
+NextJS was helpfully telling me I had a hydration error: `<button> cannot be a descendant of <button>`, but it mystified me.
+
+Until I dived into the internals of **Shadcn**'s `carousel.tsx` and saw that it had also downloaded `button.tsx`.
+
+I notice I over-engineered my own `Button` component. 🤦‍♀️ I wanted my grid and gallery view, light/dark mode, and download icons to all have a Tooltip, but considered them buttons.
+
+![buttons with tooltips](tooltips.png)
+
+I had to refactor my code to remove the extra buttons.
