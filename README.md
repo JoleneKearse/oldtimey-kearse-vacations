@@ -8,7 +8,13 @@ Fortunately, I can use them now to create a web app photo gallery, while learnin
 
 And not just any one, but a performant photo gallery, while using **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
 
-## Built With
+## Tech Stack 🧰
+
+After weighing the pros and cons, I decided to use NextJS to optimize images. 
+
+Tailwind is used for ease of styling and Shadcn for the carousel and tootips.  
+
+Rather than setting up a database I decided to take advantage of Cloudinary.
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=Cloudinary&logoColor=white)
@@ -30,9 +36,9 @@ For fun, the gallery line-up is randomized each time.
 
 ## Links
 
-Check out the [repo](https://github.com/JoleneKearse/oldtimey-kearse-vacations)
+Check out the [repo](https://github.com/JoleneKearse/oldtimey-kearse-vacations).
 
-And the [live site](https://oldtimey-kearse-vacations.vercel.app/)
+And the [live site](https://oldtimey-kearse-vacations.vercel.app/).
 
 ## Getting Started
 
@@ -46,7 +52,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Challenges
 
-I built my trusty `lib/photoUtils/shufflePhotos` function, which worked fantastically in _development_, but had this strange quirk where it always started with the same photo in _production_!
+### Making Cloudinary images downloadable
+
+**Cloudinary** is simply easy to use, but that's a two-edged sword. Since it can do so much, it was initially challenging to find the *exact* functionality I wanted. 
+
+I wanted a button to download images and fortunately it was as easy as modifying the url with `upload/fl_attachment,f_auto,q_auto/` rather than just `upload/i8`. I tossed that in a utility function & slapped it into an `onClick`.  Bang boom done!
+
+### Getting my photos to shuffle ASAP
+
+I built my trusty `lib/photoUtils/shufflePhotos` function, which worked fantastic in _development_, but had this strange quirk where it always started with the same photo in _production_!
 
 After plenty of _Huh_?!?s, I learned a new thing about **Next JS**. My Gallery and Grid components were served **client-side**. This meant I was only calling `getPhotos` and `shufflePhotos` once per build. So, it was getting _baked into_ the HTML. 🤦‍♀️
 
