@@ -60,12 +60,12 @@ export default function Gallery({ photos }: GalleryProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <TooltipIcon tooltip="Previous">
+      <TooltipIcon tooltip="Previous" side="right" sideOffset={1014}>
         <CarouselPrevious
           className={`bg-gray-950 text-stone-200 p-3 rounded-full hover:bg-stone-800 hover:text-stone-50 cursor-pointer ${sketch.className}`}
         />
       </TooltipIcon>
-      <TooltipIcon tooltip="Next">
+      <TooltipIcon tooltip="Next" side="left" sideOffset={-56}>
         <CarouselNext
           className={`bg-gray-950 text-stone-200 p-3 rounded-full hover:bg-stone-800 hover:text-stone-50 translate-x-12 cursor-pointer ${sketch.className}`}
         />

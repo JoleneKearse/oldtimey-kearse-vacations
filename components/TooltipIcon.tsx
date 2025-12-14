@@ -16,15 +16,27 @@ type TooltipIconProps = {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  side?: "top" | "right" | "bottom" | "left";
+  sideOffset?: number;
 };
 
-const TooltipIcon = ({ tooltip, children, onClick }: TooltipIconProps) => {
+const TooltipIcon = ({
+  tooltip,
+  children,
+  onClick,
+  side,
+  sideOffset,
+}: TooltipIconProps) => {
   return (
     <Tooltip>
       <TooltipTrigger onClick={onClick}>
         {children}
       </TooltipTrigger>
-      <TooltipContent className={`${notoSans.className} font-bold text-lg`}>
+      <TooltipContent
+        className={`${notoSans.className} font-bold text-lg`}
+        side={side}
+        sideOffset={sideOffset}
+      >
         {tooltip}
       </TooltipContent>
     </Tooltip>
