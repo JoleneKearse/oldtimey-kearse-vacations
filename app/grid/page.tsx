@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import type { Photo } from "@/types/photo";
 import { getPhotos } from "@/lib/cloudinary";
 import { shufflePhotos } from "@/lib/photoUtils";
 
@@ -16,7 +15,6 @@ const Grid = async () => {
           alt={photo.publicId}
           width={photo.width}
           height={photo.height}
-          className=""
         />
       ))}
     </div>

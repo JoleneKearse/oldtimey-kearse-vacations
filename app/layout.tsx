@@ -6,6 +6,7 @@ import { NewPhotosProvider } from "@/context/new-photos-context";
 import { ViewProvider } from "@/context/view-context";
 import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/next";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const notoSans = Noto_Sans({
   weight: "400",
@@ -31,9 +32,11 @@ export default function RootLayout({
         <ThemeProvider>
           <ViewProvider>
             <NewPhotosProvider>
-              <Header />
-              <main className="flex grow">{children}</main>
-              <Analytics />
+              <TooltipProvider delayDuration={0}>
+                <Header />
+                <main className="flex grow">{children}</main>
+                <Analytics />
+              </TooltipProvider>
             </NewPhotosProvider>
           </ViewProvider>
         </ThemeProvider>

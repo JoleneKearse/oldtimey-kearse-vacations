@@ -18,15 +18,10 @@ type TooltipIconProps = {
   onClick?: () => void;
 };
 
-const TooltipIcon = ({
-  tooltip,
-  children,
-  className,
-  onClick,
-}: TooltipIconProps) => {
+const TooltipIcon = ({ tooltip, children, onClick }: TooltipIconProps) => {
   return (
     <Tooltip>
-      <TooltipTrigger asChild onClick={onClick}>
+      <TooltipTrigger onClick={onClick}>
         {children}
       </TooltipTrigger>
       <TooltipContent className={`${notoSans.className} font-bold text-lg`}>
