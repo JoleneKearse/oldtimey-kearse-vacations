@@ -1,18 +1,10 @@
-_Snowballs are blowing, Christmas elves are dancing..._ Uuugh - I totally hate winter, but it's also coming up to **Christmas**! That tradtional time of the year where you use your skills to craft apps your buddies never asked for. _Come on, it can't just be me!_
-
-Anyway I had a leg up this year. My dad was hospitalized for a few months, so I went through the house, giving it a thorough clean and inspected every nook and cranny.
-
-I had an _awesome_ break from this 'cope by cleaning' psychosis, where I discovered photo albums full of my family's past vacations. I had meant to send them to my dad then, but _I-don't-know-what-happened_. :woman_shrugging:
-
-Fortunately, I can use them now to create a web app photo gallery, while learning too.
-
-And not just any one, but a performant photo gallery, while using **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
+**Vacation Memories** is a performant photo gallery built with **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
 
 ## Tech Stack 🧰
 
 After weighing the pros and cons, I decided to use NextJS to optimize images.
 
-Tailwind is used for ease of styling and Shadcn for the carousel and tootips.
+Tailwind is used for ease of styling and Shadcn for the carousel and tootips. I love how these are configurable and accessible already.
 
 Rather than setting up a database I decided to take advantage of Cloudinary.
 
@@ -20,10 +12,18 @@ Rather than setting up a database I decided to take advantage of Cloudinary.
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=Cloudinary&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Shadcn/ui](https://img.shields.io/badge/shadcn/ui-%23000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+
 <br>
 ![Last Commit](https://img.shields.io/github/last-commit/JoleneKearse/oldtimey-kearse-vacations)
 
 ## Overview
+
+First and foremost, this is a Christmas present for my dad, so some choices are made with him in mind.  Like:
+- It starts on light mode, but I wanted to switch to dark mode for me.
+- This is saved in local storage as that's all that's needed for this project's scope.  
+- The gallery is for viewing all images.
+- The grid view is for seeing all and downloading choice photos.  
+- There is a quick search function with customized tags.
 
 Home Page
 ![gallery view](image.png)
