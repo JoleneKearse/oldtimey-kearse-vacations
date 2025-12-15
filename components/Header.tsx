@@ -42,7 +42,8 @@ const Header = () => {
           hasNewPhotos && "animate-pulse px-6 py-2"
         }`}
       >
-        {hasNewPhotos ? "New" : <SearchBar handleSearchChange={handleSearchChange} />}
+        {hasNewPhotos ? "New" : null}
+        {!hasNewPhotos && view === "grid" ? (<SearchBar handleSearchChange={handleSearchChange} />) : null}
       </h1>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (
