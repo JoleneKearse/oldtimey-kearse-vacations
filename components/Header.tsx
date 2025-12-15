@@ -1,32 +1,48 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTheme } from "@/context/theme-context";
 import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
-import Link from "next/link";
-import { Londrina_Sketch } from "next/font/google";
+// import { Londrina_Sketch } from "next/font/google";
 import TooltipIcon from "./TooltipIcon";
+import SearchBar from "./SearchBar";
 
-const sketch = Londrina_Sketch({
-  weight: "400",
-  subsets: ["latin"],
-});
+// const sketch = Londrina_Sketch({
+//   weight: "400",
+//   subsets: ["latin"],
+// });
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { view, toggleView } = useView();
   const { hasNewPhotos } = useNewPhotos();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const tag = e.target.value.toLowerCase();
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (tag) {
+      params.set("search", tag);
+    } else {
+      params.delete("search");
+    }
+
+    router.push(`/grid?tag=${encodeURIComponent(tag)}`);
+  };
 
   return (
     <header className="flex items-center justify-between  p-8 w-full">
       <h1
-        className={`font-extrabold text-4xl leading-tight ${
-          sketch.className
-        } bg-blue-500 rounded-full shadow-2xl shadow-amber-300/75 ${
+        className={`font-extrabold text-4xl leading-tight   ${
           hasNewPhotos && "animate-pulse px-6 py-2"
         }`}
       >
-        {hasNewPhotos ? "New" : ""}
+        {hasNewPhotos ? "New" : <SearchBar handleSearchChange={handleSearchChange} />}
       </h1>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (
@@ -70,7 +86,7 @@ const Header = () => {
         )}
         {theme === "light" ? (
           <TooltipIcon tooltip="Dark mode">
-            <button onClick={toggleTheme} className="mt-1">
+            <div onClick={toggleTheme} className="mt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -85,7 +101,7 @@ const Header = () => {
                   d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
                 />
               </svg>
-            </button>
+            </div>
           </TooltipIcon>
         ) : (
           <TooltipIcon tooltip="Light mode">

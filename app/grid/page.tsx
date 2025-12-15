@@ -2,8 +2,13 @@ import Image from "next/image";
 import { getPhotos } from "@/lib/cloudinary";
 import { shufflePhotos } from "@/lib/photoUtils";
 
-const Grid = async () => {
-  const images = await getPhotos();
+const Grid = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ tag?: string }>;
+}) => {
+  const { tag } = await searchParams;
+  const images = await getPhotos(tag);
   const photos = shufflePhotos(images);
 
   return (

@@ -8,9 +8,15 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function getPhotos(): Promise<Photo[]> {
+export async function getPhotos(tag?: string): Promise<Photo[]> {
+  let expression = "folder:family-photos";
+  if (tag) {
+    expression += ` AND tags=${tag}*`;
+  }
+
   const result = await cloudinary.search
-    .expression("folder:family-photos")
+    .expression(expression)
+    .with_field("tags")
     .execute();
 
   return result.resources.map(
@@ -20,6 +26,7 @@ export async function getPhotos(): Promise<Photo[]> {
       width: file.width,
       height: file.height,
       format: file.format,
+      tags: file.tags || [],
     })
-  );
+  )
 }
