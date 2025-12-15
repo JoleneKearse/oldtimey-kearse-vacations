@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTheme } from "@/context/theme-context";
@@ -43,7 +44,7 @@ const Header = () => {
         }`}
       >
         {hasNewPhotos ? "New" : null}
-        {!hasNewPhotos && view === "grid" ? (<SearchBar handleSearchChange={handleSearchChange} />) : null}
+        {!hasNewPhotos && view === "grid" ? (<Suspense fallback={<div>Loading...</div>}><SearchBar handleSearchChange={handleSearchChange} /></Suspense >) : null}
       </h1>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (

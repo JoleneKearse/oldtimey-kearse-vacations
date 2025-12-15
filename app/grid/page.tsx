@@ -2,6 +2,8 @@ import Image from "next/image";
 import { getPhotos } from "@/lib/cloudinary";
 import { shufflePhotos } from "@/lib/photoUtils";
 
+// export const dynamic = "force-dynamic";
+
 const Grid = async ({
   searchParams,
 }: {
