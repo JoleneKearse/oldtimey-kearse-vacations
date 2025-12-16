@@ -5,14 +5,9 @@ import Link from "next/link";
 import { useTheme } from "@/context/theme-context";
 import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
-// import { Londrina_Sketch } from "next/font/google";
 import TooltipIcon from "./TooltipIcon";
+import { Spinner } from "@/components/ui/spinner";
 import SearchSection from "./SearchSection";
-
-// const sketch = Londrina_Sketch({
-//   weight: "400",
-//   subsets: ["latin"],
-// });
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -28,7 +23,7 @@ const Header = () => {
       >
         {hasNewPhotos ? "New" : null}
         {!hasNewPhotos && view === "grid" ? (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Spinner className="size-8" />}>
             <SearchSection />
           </Suspense>
         ) : null}
