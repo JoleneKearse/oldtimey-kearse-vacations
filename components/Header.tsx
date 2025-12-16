@@ -2,13 +2,12 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import { useTheme } from "@/context/theme-context";
 import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
 // import { Londrina_Sketch } from "next/font/google";
 import TooltipIcon from "./TooltipIcon";
-import SearchBar from "./SearchBar";
+import SearchSection from "./SearchSection";
 
 // const sketch = Londrina_Sketch({
 //   weight: "400",
@@ -19,21 +18,6 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { view, toggleView } = useView();
   const { hasNewPhotos } = useNewPhotos();
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const tag = e.target.value.toLowerCase();
-    const params = new URLSearchParams(searchParams.toString());
-
-    if (tag) {
-      params.set("search", tag);
-    } else {
-      params.delete("search");
-    }
-
-    router.push(`/grid?tag=${encodeURIComponent(tag)}`);
-  };
 
   return (
     <header className="flex items-center justify-between  p-8 w-full">
@@ -45,7 +29,7 @@ const Header = () => {
         {hasNewPhotos ? "New" : null}
         {!hasNewPhotos && view === "grid" ? (
           <Suspense fallback={<div>Loading...</div>}>
-            <SearchBar handleSearchChange={handleSearchChange} />
+            <SearchSection />
           </Suspense>
         ) : null}
       </h1>
