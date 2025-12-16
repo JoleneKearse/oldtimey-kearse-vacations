@@ -22,7 +22,6 @@ const Header = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const tag = e.target.value.toLowerCase();
     const params = new URLSearchParams(searchParams.toString());
@@ -44,7 +43,11 @@ const Header = () => {
         }`}
       >
         {hasNewPhotos ? "New" : null}
-        {!hasNewPhotos && view === "grid" ? (<Suspense fallback={<div>Loading...</div>}><SearchBar handleSearchChange={handleSearchChange} /></Suspense >) : null}
+        {!hasNewPhotos && view === "grid" ? (
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBar handleSearchChange={handleSearchChange} />
+          </Suspense>
+        ) : null}
       </h1>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (
