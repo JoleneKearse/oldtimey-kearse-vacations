@@ -18,17 +18,18 @@ Rather than setting up a database I decided to take advantage of Cloudinary.
 
 ## Overview
 
-First and foremost, this is a Christmas present for my dad, so some choices are made with him in mind.  Like:
+First and foremost, this is a Christmas present for my dad, so some choices are made with him in mind. Like:
+
 - It starts on light mode, but I wanted to switch to dark mode for me.
-- This is saved in local storage as that's all that's needed for this project's scope.  
+- This is saved in local storage as that's all that's needed for this project's scope.
 - The gallery is for viewing all images.
-- The grid view is for seeing all and downloading choice photos.  
+- The grid view is for seeing all and downloading choice photos.
 - There is a quick search function with customized tags.
 
 Home Page
-![gallery view](image.png)
+![gallery view](gallery-view.png)
 Grid Route
-![grid view](image-1.png)
+![grid view](grid-view.png)
 
 When users (my dad and me) come to the home page, they are greeted with an accessible carousel. They can download each image in the best format for their device, and switch the view and light/dark mode.
 
