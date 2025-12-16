@@ -1,6 +1,7 @@
-import Gallery from "@/components/Gallery";
 import { getPhotos } from "@/lib/cloudinary";
 import { shufflePhotos } from "@/lib/photoUtils";
+
+import Gallery from "@/components/Gallery";
 
 export const dynamic = "force-dynamic";
 

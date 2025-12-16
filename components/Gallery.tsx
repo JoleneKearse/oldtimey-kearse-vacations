@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+
 import Image from "next/image";
+import { Londrina_Sketch } from "next/font/google";
+
 import {
   Carousel,
   CarouselContent,
@@ -9,11 +12,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
 import { useNewPhotos } from "@/context/new-photos-context";
-import type { Photo } from "@/types/photo";
+
 import { setStoredPhotoCount, getStoredPhotoCount } from "@/lib/photoUtils";
-import { Londrina_Sketch } from "next/font/google";
+
 import TooltipIcon from "@/components/TooltipIcon";
+
+import type { Photo } from "@/types/photo";
 
 const sketch = Londrina_Sketch({
   weight: "400",

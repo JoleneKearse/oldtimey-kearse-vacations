@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import "./globals.css";
+
 import { ThemeProvider } from "@/context/theme-context";
 import { NewPhotosProvider } from "@/context/new-photos-context";
 import { ViewProvider } from "@/context/view-context";
+
 import Header from "@/components/Header";
-import { Analytics } from "@vercel/analytics/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
+
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const notoSans = Noto_Sans({
   weight: "400",

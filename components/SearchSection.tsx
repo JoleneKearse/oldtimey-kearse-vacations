@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+
 import SearchBar from "./SearchBar";
 
 const SearchSection = () => {

@@ -1,4 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
+
 import type { Photo } from "@/types/photo";
 import type { CloudinaryResource } from "@/types/cloudinaryResource";
 
@@ -28,5 +29,5 @@ export async function getPhotos(tag?: string): Promise<Photo[]> {
       format: file.format,
       tags: file.tags || [],
     })
-  )
+  );
 }

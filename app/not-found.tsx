@@ -1,6 +1,8 @@
 import { Suspense } from "react";
+
 import Link from "next/link";
 import { Londrina_Sketch } from "next/font/google";
+
 import { Spinner } from "@/components/ui/spinner";
 
 const sketch = Londrina_Sketch({

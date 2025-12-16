@@ -1,10 +1,12 @@
 "use client";
 
 import { Suspense } from "react";
+
 import Link from "next/link";
 import { useTheme } from "@/context/theme-context";
 import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
+
 import TooltipIcon from "./TooltipIcon";
 import { Spinner } from "@/components/ui/spinner";
 import SearchSection from "./SearchSection";

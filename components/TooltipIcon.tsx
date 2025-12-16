@@ -1,10 +1,12 @@
 import React from "react";
+
+import { Noto_Sans } from "next/font/google";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({
   weight: "400",
@@ -29,9 +31,7 @@ const TooltipIcon = ({
 }: TooltipIconProps) => {
   return (
     <Tooltip>
-      <TooltipTrigger onClick={onClick}>
-        {children}
-      </TooltipTrigger>
+      <TooltipTrigger onClick={onClick}>{children}</TooltipTrigger>
       <TooltipContent
         className={`${notoSans.className} font-bold text-lg`}
         side={side}
