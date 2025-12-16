@@ -13,11 +13,11 @@ const SearchSection = () => {
 
     if (tag) {
       params.set("search", tag);
+      router.push(`/grid?tag=${encodeURIComponent(tag)}`);
     } else {
       params.delete("search");
+      router.push("/grid");
     }
-
-    router.push(`/grid?tag=${encodeURIComponent(tag)}`);
   };
 
   return <SearchBar handleSearchChange={handleSearchChange} />;
