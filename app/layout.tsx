@@ -32,7 +32,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ViewProvider>
             <NewPhotosProvider>
-              <TooltipProvider delayDuration={0}>
+              <TooltipProvider delayDuration={250}>
                 <Header />
                 <main className="flex grow">{children}</main>
                 <Analytics />

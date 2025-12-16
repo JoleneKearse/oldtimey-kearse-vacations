@@ -1,16 +1,13 @@
 "use client";
 
+import { Suspense } from "react";
+import Link from "next/link";
 import { useTheme } from "@/context/theme-context";
 import { useView } from "@/context/view-context";
 import { useNewPhotos } from "@/context/new-photos-context";
-import Link from "next/link";
-import { Londrina_Sketch } from "next/font/google";
 import TooltipIcon from "./TooltipIcon";
-
-const sketch = Londrina_Sketch({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { Spinner } from "@/components/ui/spinner";
+import SearchSection from "./SearchSection";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -20,13 +17,16 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between  p-8 w-full">
       <h1
-        className={`font-extrabold text-4xl leading-tight ${
-          sketch.className
-        } bg-blue-500 rounded-full shadow-2xl shadow-amber-300/75 ${
+        className={`font-extrabold text-4xl leading-tight   ${
           hasNewPhotos && "animate-pulse px-6 py-2"
         }`}
       >
-        {hasNewPhotos ? "New" : ""}
+        {hasNewPhotos ? "New" : null}
+        {!hasNewPhotos && view === "grid" ? (
+          <Suspense fallback={<Spinner className="size-8" />}>
+            <SearchSection />
+          </Suspense>
+        ) : null}
       </h1>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (
@@ -70,7 +70,7 @@ const Header = () => {
         )}
         {theme === "light" ? (
           <TooltipIcon tooltip="Dark mode">
-            <button onClick={toggleTheme} className="mt-1">
+            <div onClick={toggleTheme} className="mt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -85,7 +85,7 @@ const Header = () => {
                   d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
                 />
               </svg>
-            </button>
+            </div>
           </TooltipIcon>
         ) : (
           <TooltipIcon tooltip="Light mode">

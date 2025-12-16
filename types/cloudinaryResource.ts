@@ -4,4 +4,5 @@ export type CloudinaryResource = {
   width: number;
   height: number;
   format?: string;
+  tags?: string[];
 };

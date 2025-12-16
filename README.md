@@ -13,7 +13,7 @@ Rather than setting up a database I decided to take advantage of Cloudinary.
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Shadcn/ui](https://img.shields.io/badge/shadcn/ui-%23000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 
-<br>
+<br></br>
 ![Last Commit](https://img.shields.io/github/last-commit/JoleneKearse/oldtimey-kearse-vacations)
 
 ## Overview
