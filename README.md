@@ -43,6 +43,24 @@ And the [live site](https://oldtimey-kearse-vacations.vercel.app/).
 
 ## Getting Started
 
+1. Create a free account at [Cloudinary](https://cloudinary.com).
+2. Take note of the **Cloud Name** along with the **API Key** and **API Secret**.  These can be found in your *Dashboard* under *Product Environment*.
+3. Create a `.env` file at your project's root and paste this in along with your private details:
+```dotnetcli
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+4. Clone the [project](https://github.com/JoleneKearse/oldtimey-kearse-vacations.git) and run `pnpm install`.
+5. Add your assets in Cloudinary's *Media Library* and create a Folder for easy access.
+6. Go to `lib/cloudinary.ts` and change line 13 to what you named your folder.
+```typescript
+let expression = "folder:<FAMILY-PHOTOS>";
+```
+
+
+
+
 First, run the development server:
 
 ```bash
