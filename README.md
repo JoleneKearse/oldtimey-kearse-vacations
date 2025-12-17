@@ -1,5 +1,7 @@
 **Vacation Memories** is a performant photo gallery built with **[Next.js](https://nextjs.org)**, **[Cloudinary](https://cloudinary.com/pages/)**, and **[ShadCN](https://ui.shadcn.com/)**.
 
+Check out the [live site](https://oldtimey-kearse-vacations.vercel.app/)!
+
 ## Tech Stack 🧰
 
 After weighing the pros and cons, I decided to use NextJS to optimize images.
@@ -13,7 +15,8 @@ Rather than setting up a database I decided to take advantage of Cloudinary.
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Shadcn/ui](https://img.shields.io/badge/shadcn/ui-%23000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 
-<br></br>
+<br>
+
 ![Last Commit](https://img.shields.io/github/last-commit/JoleneKearse/oldtimey-kearse-vacations)
 
 ## Overview
@@ -31,15 +34,9 @@ Home Page
 Grid Route
 ![grid view](grid-view.png)
 
-When users (my dad and me) come to the home page, they are greeted with an accessible carousel. They can download each image in the best format for their device, and switch the view and light/dark mode.
+When users (my dad and me) come to the home page, they are greeted with an accessible carousel. They can change the light/dark mode and switch to grid view, where the images are downloadable.
 
 For fun, the gallery line-up is randomized each time.
-
-## Links
-
-Check out the [repo](https://github.com/JoleneKearse/oldtimey-kearse-vacations).
-
-And the [live site](https://oldtimey-kearse-vacations.vercel.app/).
 
 ## Getting Started
 
@@ -57,11 +54,7 @@ CLOUDINARY_API_SECRET=your_api_secret
 ```typescript
 let expression = "folder:<FAMILY-PHOTOS>";
 ```
-
-
-
-
-First, run the development server:
+7. Run the development server:
 
 ```bash
 pnpm dev
@@ -103,4 +96,4 @@ I notice I over-engineered my own `Button` component. 🤦‍♀️ I wanted my 
 
 ![buttons with tooltips](tooltips.png)
 
-I had to refactor my code to remove the extra buttons.
+I had to refactor my code to remove the extra buttons.  Changing `Button.tsx` to `TooltipIcon.tsx` made it more expressive.  
