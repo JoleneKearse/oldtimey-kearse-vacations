@@ -32,7 +32,7 @@ const Grid = async ({
               width="1em"
               height="1em"
               viewBox="0 0 24 24"
-              className="size-8 absolute -top-6 right-0 cursor-pointer"
+              className="size-8 absolute -top-8 right-0 cursor-pointer"
             >
               <path
                 fill="currentColor"

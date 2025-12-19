@@ -9,6 +9,7 @@ import { useNewPhotos } from "@/context/new-photos-context";
 
 import TooltipIcon from "./TooltipIcon";
 import { Spinner } from "@/components/ui/spinner";
+import Badge from "@/components/Badge";
 import SearchSection from "./SearchSection";
 
 const Header = () => {
@@ -18,18 +19,19 @@ const Header = () => {
 
   return (
     <header className="flex items-center justify-between  p-8 w-full">
-      <h1
-        className={`font-extrabold text-4xl leading-tight   ${
+      <h2
+        className={`font-extrabold text-3xl leading-tight ${
           hasNewPhotos && "animate-pulse px-6 py-2"
         }`}
       >
-        {hasNewPhotos ? "New" : null}
-        {!hasNewPhotos && view === "grid" ? (
+        {hasNewPhotos && view === "gallery" ? (
+          <Badge text="New" color="purple" />
+        ) : view === "grid" ? (
           <Suspense fallback={<Spinner className="size-8" />}>
             <SearchSection />
           </Suspense>
         ) : null}
-      </h1>
+      </h2>
       <div className="flex justify-center gap-6">
         {view === "gallery" ? (
           <TooltipIcon tooltip="Grid view">

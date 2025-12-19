@@ -88,7 +88,7 @@ While I was tempted to apply this to my `/grid` route, I abstained to make it ea
 
 ### Detecting a Hydration Error
 
-NextJS was helpfully telling me I had a hydration error: `<button> cannot be a descendant of <button>`, but it mystified me.
+NextJS was helpfully telling me I had a hydration error: `<button> cannot be a descendant of <button>`, but it mystified me...
 
 Until I dived into the internals of **Shadcn**'s `carousel.tsx` and saw that it had also downloaded `button.tsx`.
 
