@@ -17,9 +17,9 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kearse Vacation Photos",
+  title: "Our Oldtimey Vacation Memories",
   description:
-    "Digitized photos from our old albums to view on the interwebs and even download!",
+    "Digitized photos from our old albums to view on the interwebs and download!",
 };
 
 export default function RootLayout({

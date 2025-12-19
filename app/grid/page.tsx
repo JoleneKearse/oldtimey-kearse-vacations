@@ -1,6 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Londrina_Sketch } from "next/font/google";
+
 import { getPhotos } from "@/lib/cloudinary";
 import { downloadPhoto, shufflePhotos } from "@/lib/photoUtils";
+
+const sketch = Londrina_Sketch({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Grid = async ({
   searchParams,
@@ -10,6 +18,35 @@ const Grid = async ({
   const { tag } = await searchParams;
   const images = await getPhotos(tag);
   const photos = shufflePhotos(images);
+
+  if (photos.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 p-8 min-h-[50vh] w-full">
+        <p
+          className={`text-4xl font-extrabold ${sketch.className} text-stone-700 dark:text-stone-300`}
+        >
+          No photos found {tag && `for "`}{" "}
+          {tag ? (
+            <span className="text-purple-600 dark:text-purple-400">
+              {tag}
+            </span>
+          ) : (
+            ""
+          )}
+          {tag && `"`}!
+        </p>
+        <p className="text-lg">
+          Try searching for a something we've actually done, sheesh!
+        </p>
+        <Link
+          href="/grid"
+          className="mt-4 px-6 py-2 bg-purple-500 hover:bg-purple-700 text-stone-800 dark:text-stone-300 rounded-lg transition-colors"
+        >
+          Retry
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-4 row-auto justify-center items-center gap-4 p-4">
@@ -23,10 +60,7 @@ const Grid = async ({
             height={photo.height}
             className="relative"
           />
-          <a
-            href={downloadPhoto(photo.url)}
-            download
-          >
+          <a href={downloadPhoto(photo.url)} download>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
