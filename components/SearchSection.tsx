@@ -1,15 +1,23 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import SearchBar from "./SearchBar";
 
 const SearchSection = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    const tag = searchParams.get("tag");
+    setSearchValue(tag || "");
+  }, [searchParams]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const tag = e.target.value.toLowerCase();
+    setSearchValue(tag);
     const params = new URLSearchParams(searchParams.toString());
 
     if (tag) {
@@ -21,7 +29,7 @@ const SearchSection = () => {
     }
   };
 
-  return <SearchBar handleSearchChange={handleSearchChange} />;
+  return <SearchBar handleSearchChange={handleSearchChange} value={searchValue} />;
 };
 
 export default SearchSection;
