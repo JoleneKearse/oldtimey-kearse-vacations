@@ -27,9 +27,7 @@ const Grid = async ({
         >
           No photos found {tag && `for "`}{" "}
           {tag ? (
-            <span className="text-purple-600 dark:text-purple-400">
-              {tag}
-            </span>
+            <span className="text-purple-600 dark:text-purple-400">{tag}</span>
           ) : (
             ""
           )}
@@ -49,7 +47,7 @@ const Grid = async ({
   }
 
   return (
-    <div className="grid grid-cols-4 row-auto justify-center items-center gap-4 p-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 row-auto justify-center items-center gap-4 p-4">
       {photos.map((photo, index) => (
         <div key={index} className="relative text-purple-600">
           <Image
