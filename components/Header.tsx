@@ -18,10 +18,10 @@ const Header = () => {
   const { hasNewPhotos } = useNewPhotos();
 
   return (
-    <header className="flex items-center justify-between  p-8 w-full">
+    <header className="flex items-center justify-between p-4 w-full">
       <h2
         className={`font-extrabold text-3xl leading-tight ${
-          hasNewPhotos && "animate-pulse px-6 py-2"
+          hasNewPhotos && "animate-pulse py-2"
         }`}
       >
         {hasNewPhotos && view === "gallery" ? (
@@ -32,7 +32,7 @@ const Header = () => {
           </Suspense>
         ) : null}
       </h2>
-      <div className="flex justify-center gap-6">
+      <div className="flex justify-center items-center gap-6">
         {view === "gallery" ? (
           <TooltipIcon tooltip="Grid view">
             <Link
