@@ -21,6 +21,8 @@ import TooltipIcon from "@/components/TooltipIcon";
 
 import type { Photo } from "@/types/photo";
 
+import CarouselIndicators from "./CarouselIndicators";
+
 const sketch = Londrina_Sketch({
   weight: "400",
   subsets: ["latin"],
@@ -46,7 +48,7 @@ export default function Gallery({ photos }: GalleryProps) {
 
   return (
     <Carousel
-      className="flex w-[400px] md:w-[700px] lg:w-1/2 lg:h-1/2 mx-auto my-auto"
+      className="flex w-[400px] md:w-[700px] lg:w-1/2 lg:h-1/2 mx-auto my-auto flex-col"
       opts={{ loop: true }}
     >
       <CarouselContent>
@@ -76,6 +78,7 @@ export default function Gallery({ photos }: GalleryProps) {
           className={`bg-gray-950 text-stone-200 p-3 rounded-full hover:bg-stone-800 hover:text-stone-50 translate-x-12 cursor-pointer ${sketch.className}`}
         />
       </TooltipIcon>
+      <CarouselIndicators variant="dots-slash" />
     </Carousel>
   );
 }
